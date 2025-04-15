@@ -28,9 +28,12 @@ class FFNN(nn.Module):
         return self.loss(predicted_vector, gold_label)
 
     def forward(self, input_vector):
-        h = self.activation(self.W1(input_vector))         # hidden layer
-        z = self.W2(h)                                     # output layer
-        predicted_vector = self.softmax(z)                 # softmax output
+        # hidden layer
+        h = self.activation(self.W1(input_vector))         
+        # output layer
+        z = self.W2(h)                                     
+        # softmax output
+        predicted_vector = self.softmax(z)                 
         return predicted_vector
 
 def make_vocab(data):
